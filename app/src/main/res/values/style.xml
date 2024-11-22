@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- START OF FONT -->
+
+    <!-- Regular-->
+    <style name="regular_body_3">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="regular_body_2">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="regular_body_1">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="regular_heading_4">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="regular_heading_3">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="regular_heading_2">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">48sp</item>
+    </style>
+
+    <style name="regular_heading_1">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">64sp</item>
+    </style>
+
+    <!-- Semi Bold-->
+    <style name="semibold_body_3">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="semibold_body_2">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="semibold_body_1">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="semibold_heading_4">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="semibold_heading_3">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="semibold_heading_2">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">48sp</item>
+    </style>
+
+    <style name="semibold_heading_1">
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">64sp</item>
+    </style>
+
+    <!-- Bold-->
+    <style name="bold_body_3">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="bold_body_2">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="bold_body_1">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="bold_heading_4">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="bold_heading_3">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">40sp</item>
+    </style>
+
+    <style name="bold_heading_2">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">48sp</item>
+    </style>
+
+    <style name="bold_heading_1">
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">64sp</item>
+    </style>
+
+    <!-- END OF FONT -->
+
+    <!-- START OF COLOR -->
+
+    <!-- Base-->
+    <color name="base_black">#0A0B0A</color>
+    <color name="base_white">#FAFAFA</color>
+
+    <!-- Neutrals-->
+    <color name="neutrals_25">#F6F6F6</color>
+    <color name="neutrals_50">#F0F0F0</color>
+    <color name="neutrals_100">#E3E3E3</color>
+    <color name="neutrals_200">#CCCBCB</color>
+    <color name="neutrals_300">#B5B3B3</color>
+    <color name="neutrals_400">#9F9C9C</color>
+    <color name="neutrals_500">#898483</color>
+    <color name="neutrals_600">#726C6C</color>
+    <color name="neutrals_700">#5A5555</color>
+    <color name="neutrals_800">#433F3E</color>
+    <color name="neutrals_900">#2B2928</color>
+    <color name="neutrals_1000">#151413</color>
+
+    <!-- Primary-->
+    <color name="primary_50">#DFF2EB</color>
+    <color name="primary_100">#B1DFCD</color>
+    <color name="primary_200">#7ECBAD</color>
+    <color name="primary_300">#4FB58F</color>
+    <color name="primary_400">#31A47A</color>
+    <color name="primary_500">#1F9468</color>
+    <color name="primary_600">#1B875D</color>
+    <color name="primary_700">#16774F</color>
+    <color name="primary_800">#0E6742</color>
+    <color name="primary_900">#064B2A</color>
+
+    <!-- Secondary-->
+    <color name="secondary_50">#F9EDF7</color>
+    <color name="secondary_100">#F0D1ED</color>
+    <color name="secondary_200">#EBB1E5</color>
+    <color name="secondary_300">#E690DE</color>
+    <color name="secondary_400">#E075D6</color>
+    <color name="secondary_500">#D95FCF</color>
+    <color name="secondary_600">#CA59C8</color>
+    <color name="secondary_700">#B751BF</color>
+    <color name="secondary_800">#A64BB7</color>
+    <color name="secondary_900">#8940A9</color>
+
+    <!-- Success-->
+    <color name="success_50">#F0FEF0</color>
+    <color name="success_100">#C3F8C3</color>
+    <color name="success_200">#88F288</color>
+    <color name="success_300">#4CEB4C</color>
+    <color name="success_400">#18DC18</color>
+    <color name="success_500">#12A112</color>
+    <color name="success_600">#0E810E</color>
+    <color name="success_700">#0B600B</color>
+    <color name="success_800">#074007</color>
+    <color name="success_900">#042004</color>
+
+    <!-- Warning-->
+    <color name="warning_50">#FFFDE7</color>
+    <color name="warning_100">#FFF9C4</color>
+    <color name="warning_200">#FFF59D</color>
+    <color name="warning_300">#FEF075</color>
+    <color name="warning_400">#FCEB55</color>
+    <color name="warning_500">#FFEB3B</color>
+    <color name="warning_600">#FDD835</color>
+    <color name="warning_700">#FBC02D</color>
+    <color name="warning_800">#F9A825</color>
+    <color name="warning_900">#F57F16</color>
+
+    <!-- Error-->
+    <color name="error_50">#FDEBEC</color>
+    <color name="error_100">#F9CDCD</color>
+    <color name="error_200">#F49A9A</color>
+    <color name="error_300">#EE6868</color>
+    <color name="error_400">#E93535</color>
+    <color name="error_500">#CF1717</color>
+    <color name="error_600">#A61212</color>
+    <color name="error_700">#7C0E0E</color>
+    <color name="error_800">#530909</color>
+    <color name="error_900">#290505</color>
+
+    <!-- END OF COLOR -->
+
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "930024329046",
+    "project_id": "pawcket-9c810",
+    "storage_bucket": "pawcket-9c810.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930024329046:android:34bcff23405b4100d510f7",
+        "android_client_info": {
+          "package_name": "com.mobile.pawcket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnOFDYbDjbdRemMHFOALI6ybv93KKypAY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
