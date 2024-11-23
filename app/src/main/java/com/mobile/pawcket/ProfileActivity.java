@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -18,6 +19,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private TextView tvName, tvUsername;
     private ImageButton ibBack;
+    private ConstraintLayout clFriendActionContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvName = findViewById(R.id.tvName);
         tvUsername = findViewById(R.id.tvUsername);
         ibBack = findViewById(R.id.ibBack);
+        clFriendActionContainer = findViewById(R.id.clFriendActionContainer);
 
         tvName.setText(userManager.getName());
         tvUsername.setText(userManager.getUsername());
@@ -48,6 +51,14 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        clFriendActionContainer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, FriendActivity.class);
+                startActivity(intent);
             }
         });
     }
