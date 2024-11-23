@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_50"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ProfileActivity">
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/chevron_left" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ibBack"
+            app:srcCompat="@drawable/cat_main_profile" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Name"
+            android:textAppearance="@style/semibold_body_1"
+            android:textFontWeight="600"
+            android:textSize="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvUsername">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSpeciesContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="105dp"
+                android:background="@drawable/primary_button"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvSpecies"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kucing"
+                        android:textAppearance="@style/bold_body_1"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvSpeciesLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Species"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/regular_body_3"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clSexContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="105dp"
+                android:background="@drawable/primary_button"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvSex"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Betina"
+                        android:textAppearance="@style/bold_body_1"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvSexLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kelamin"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/regular_body_3"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clAgeContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="105dp"
+                android:background="@drawable/primary_button"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvAge"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="2 Tahun"
+                        android:textAppearance="@style/bold_body_1"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tvAgeLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Usia"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/regular_body_3"
+                        android:textColor="@android:color/white" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clFriendsMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <ImageView
+                android:id="@+id/ivFriendsMenuIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/search" />
+
+            <TextView
+                android:id="@+id/tvFriendsMenuLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Friends"
+                android:textAppearance="@style/semibold_body_1"
+                android:textColor="@color/primary_500"
+                app:layout_constraintBottom_toBottomOf="@+id/ivFriendsMenuIcon"
+                app:layout_constraintStart_toEndOf="@+id/ivFriendsMenuIcon"
+                app:layout_constraintTop_toTopOf="@+id/ivFriendsMenuIcon" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clFriendActionContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_secondary_50"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="21dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivFriendsMenuIcon">
+
+                <ImageView
+                    android:id="@+id/ivFriendsIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/friends_icon" />
+
+                <TextView
+                    android:id="@+id/tvFriends"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Friends"
+                    android:textAppearance="@style/semibold_body_1"
+                    android:textColor="@color/neutrals_600"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivFriendsIcon"
+                    app:layout_constraintStart_toEndOf="@+id/ivFriendsIcon"
+                    app:layout_constraintTop_toTopOf="@+id/ivFriendsIcon" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivFriendsIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivFriendsIcon"
+                    app:srcCompat="@drawable/chevron_right_green" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clGeneralMenuContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clFriendsMenu">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clGeneralActionContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_secondary_50"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="21dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivGeneralMenuIcon">
+
+                <ImageView
+                    android:id="@+id/ivCommentChevron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivCommentIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivCommentIcon"
+                    app:srcCompat="@drawable/chevron_right_green" />
+
+                <TextView
+                    android:id="@+id/tvActivity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Ringkasan Aktivitas"
+                    android:textAppearance="@style/semibold_body_1"
+                    android:textColor="@color/neutrals_600"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivActivityIcon"
+                    app:layout_constraintStart_toEndOf="@+id/ivActivityIcon"
+                    app:layout_constraintTop_toTopOf="@+id/ivActivityIcon" />
+
+                <ImageView
+                    android:id="@+id/ivActivityChevron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivActivityIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivActivityIcon"
+                    app:srcCompat="@drawable/chevron_right_green" />
+
+                <TextView
+                    android:id="@+id/tvComment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Notifikasi Komentar"
+                    android:textAppearance="@style/semibold_body_1"
+                    android:textColor="@color/neutrals_600"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivCommentIcon"
+                    app:layout_constraintStart_toEndOf="@+id/ivCommentIcon"
+                    app:layout_constraintTop_toTopOf="@+id/ivCommentIcon" />
+
+                <ImageView
+                    android:id="@+id/ivTagChevron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivTagIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivTagIcon"
+                    app:srcCompat="@drawable/chevron_right_green" />
+
+                <TextView
+                    android:id="@+id/tvTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Notifikasi Tag"
+                    android:textAppearance="@style/semibold_body_1"
+                    android:textColor="@color/neutrals_600"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivTagIcon"
+                    app:layout_constraintStart_toEndOf="@+id/ivNewFriendIcon"
+                    app:layout_constraintTop_toTopOf="@+id/ivTagIcon"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/tvNewFriends"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Permintaan Teman Baru"
+                    android:textAppearance="@style/semibold_body_1"
+                    android:textColor="@color/neutrals_600"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivNewFriendIcon"
+                    app:layout_constraintStart_toEndOf="@+id/ivNewFriendIcon"
+                    app:layout_constraintTop_toTopOf="@+id/ivNewFriendIcon"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ImageView
+                    android:id="@+id/ivNewFriendChevron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivNewFriendIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/chevron_right_green" />
+
+                <ImageView
+                    android:id="@+id/ivNewFriendIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/secondary_circle" />
+
+                <ImageView
+                    android:id="@+id/ivTagIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivNewFriendIcon"
+                    app:srcCompat="@drawable/secondary_circle" />
+
+                <ImageView
+                    android:id="@+id/ivCommentIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivTagIcon"
+                    app:srcCompat="@drawable/secondary_circle" />
+
+                <ImageView
+                    android:id="@+id/ivActivityIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivCommentIcon"
+                    app:srcCompat="@drawable/secondary_circle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tvGeneralMenuLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="General"
+                android:textAppearance="@style/semibold_body_1"
+                android:textColor="@color/primary_500"
+                app:layout_constraintBottom_toBottomOf="@+id/ivGeneralMenuIcon"
+                app:layout_constraintStart_toEndOf="@+id/ivGeneralMenuIcon"
+                app:layout_constraintTop_toTopOf="@+id/ivGeneralMenuIcon" />
+
+            <ImageView
+                android:id="@+id/ivGeneralMenuIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/general_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clPrivacyMenuContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clGeneralMenuContainer">
+
+            <TextView
+                android:id="@+id/tvPrivacyMenuLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Privacy &amp; Safety"
+                android:textAppearance="@style/semibold_body_1"
+                android:textColor="@color/primary_500"
+                app:layout_constraintBottom_toBottomOf="@+id/ivPrivacyMenuIcon"
+                app:layout_constraintStart_toEndOf="@+id/ivPrivacyMenuIcon"
+                app:layout_constraintTop_toTopOf="@+id/ivPrivacyMenuIcon" />
+
+            <ImageView
+                android:id="@+id/ivPrivacyMenuIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/privacy_icon" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clPrivacyActionContainer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_secondary_50"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="21dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvPrivacyMenuLabel"
+                app:layout_constraintVertical_bias="1.0">
+
+                <ImageView
+                    android:id="@+id/ivVisibiltyChevron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivVisibiltyIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivVisibiltyIcon"
+                    app:srcCompat="@drawable/chevron_right_green" />
+
+                <TextView
+                    android:id="@+id/tvVisibilty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Visibilitas Akun"
+                    android:textAppearance="@style/semibold_body_1"
+                    android:textColor="@color/neutrals_600"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivVisibiltyIcon"
+                    app:layout_constraintStart_toEndOf="@+id/ivVisibiltyIcon"
+                    app:layout_constraintTop_toTopOf="@+id/ivVisibiltyIcon" />
+
+                <ImageView
+                    android:id="@+id/ivLocationChevron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivLocationIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivLocationIcon"
+                    app:srcCompat="@drawable/chevron_right_green" />
+
+                <TextView
+                    android:id="@+id/tvLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Berbagi Lokasi"
+                    android:textAppearance="@style/semibold_body_1"
+                    android:textColor="@color/neutrals_600"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivLocationIcon"
+                    app:layout_constraintStart_toEndOf="@+id/ivLocationIcon"
+                    app:layout_constraintTop_toTopOf="@+id/ivLocationIcon" />
+
+                <ImageView
+                    android:id="@+id/ivVisibiltyIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/secondary_circle" />
+
+                <ImageView
+                    android:id="@+id/ivLocationIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivVisibiltyIcon"
+                    app:srcCompat="@drawable/secondary_circle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clDangerMenuContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.472"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clPrivacyMenuContainer">
+
+            <TextView
+                android:id="@+id/tvDangerMenuLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="Danger Zone"
+                android:textAppearance="@style/semibold_body_1"
+                android:textColor="@color/primary_500"
+                app:layout_constraintBottom_toBottomOf="@+id/ivDangerMenuIcon"
+                app:layout_constraintStart_toEndOf="@+id/ivDangerMenuIcon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivDangerMenuIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/danger_icon" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clDangerActionContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_error_50"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="21dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivDangerMenuIcon"
+                app:layout_constraintVertical_bias="1.0">
+
+                <ImageView
+                    android:id="@+id/ivNonActivateChevron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/chevron_right_red"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivNonActivateIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivNonActivateIcon" />
+
+                <TextView
+                    android:id="@+id/tvNonActivate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Nonaktifkan Akun"
+                    android:textAppearance="@style/semibold_body_1"
+                    android:textColor="@color/neutrals_600"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivNonActivateIcon"
+                    app:layout_constraintStart_toEndOf="@+id/ivNonActivateIcon"
+                    app:layout_constraintTop_toTopOf="@+id/ivNonActivateIcon" />
+
+                <TextView
+                    android:id="@+id/tvDeletAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Hapus Akun"
+                    android:textAppearance="@style/semibold_body_1"
+                    android:textColor="@color/neutrals_600"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivDeleteAccountIcon"
+                    app:layout_constraintStart_toEndOf="@+id/ivDeleteAccountIcon"
+                    app:layout_constraintTop_toTopOf="@+id/ivDeleteAccountIcon" />
+
+                <ImageView
+                    android:id="@+id/ivNonActivateIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/secondary_circle" />
+
+                <ImageView
+                    android:id="@+id/ivDeleteAccountChevron"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/chevron_right_red"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivDeleteAccountIcon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ivDeleteAccountIcon" />
+
+                <ImageView
+                    android:id="@+id/ivDeleteAccountIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivNonActivateIcon"
+                    app:srcCompat="@drawable/secondary_circle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textAppearance="@style/semibold_body_1"
+            android:textColor="@color/neutrals_600"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

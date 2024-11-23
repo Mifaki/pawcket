@@ -27,6 +27,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.mobile.pawcket.utils.UserManager;
 
 import java.util.Objects;
 
@@ -100,8 +101,13 @@ public class LoginActivity extends AppCompatActivity {
 
                         if (Objects.equals(passwordFromDB, password)) {
                             etPassword.setError(null);
-                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+
+                            UserManager userManager = UserManager.getInstance(LoginActivity.this);
+                            userManager.saveUser(userSnapshot);
+
+                            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
                             startActivity(intent);
+                            finish();
                         } else {
                             etPassword.setError("Invalid Credentials");
                             etPassword.requestFocus();
