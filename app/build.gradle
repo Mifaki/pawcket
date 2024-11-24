@@ -8,9 +8,9 @@ android {
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.mobile.pawcket"
-        minSdk 29
         targetSdk 34
+        minSdk 29
+        applicationId "com.mobile.pawcket"
         versionCode 1
         versionName "1.0"
 
@@ -33,7 +33,6 @@ android {
 }
 
 dependencies {
-
     implementation libs.appcompat
     implementation libs.material
     implementation libs.constraintlayout
@@ -42,6 +41,14 @@ dependencies {
     implementation libs.activity
     implementation libs.firebase.database
     implementation libs.legacy.support.v4
+    implementation libs.camera.core
+    implementation libs.camera.camera2
+    implementation libs.camera.lifecycle
+    implementation libs.camera.view
+    implementation libs.cardview
+    implementation libs.cloudinary.android
+    implementation libs.cloudinary.core
+    implementation libs.okhttp
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
