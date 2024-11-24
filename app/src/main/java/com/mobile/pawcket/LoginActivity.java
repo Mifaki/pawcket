@@ -105,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                             UserManager userManager = UserManager.getInstance(LoginActivity.this);
                             userManager.saveUser(userSnapshot);
 
-                            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             startActivity(intent);
                             finish();
                         } else {

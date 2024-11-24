@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clViewPagerContentContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clCapturedImageContainer"
+        android:layout_width="0dp"
+        android:layout_height="360dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/input_rounded_bg_secondary"
+            android:ems="10"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            android:text=""
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:translationZ="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cardCapturedImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardCapturedImage"
+            android:layout_width="0dp"
+            android:layout_height="360dp"
+            app:cardCornerRadius="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivCapturedImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:translationZ="10dp" />
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clUsernameContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="@+id/clCapturedImageContainer"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/clCapturedImageContainer"
+        app:layout_constraintTop_toBottomOf="@+id/clCapturedImageContainer">
+
+        <ImageView
+            android:id="@+id/ivProfilePicture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/cat_profile_lime" />
+
+        <TextView
+            android:id="@+id/tvHistoryUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Miu"
+            android:textAppearance="@style/semibold_body_1"
+            android:textColor="@color/primary_800"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivProfilePicture"
+            app:layout_constraintTop_toTopOf="@+id/ivProfilePicture" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clUserIdentityContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/clCapturedImageContainer"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="@+id/clCapturedImageContainer"
+        app:layout_constraintTop_toBottomOf="@+id/clUsernameContainer">
+
+        <TextView
+            android:id="@+id/tvHistorySpecies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_border_secondary"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:text="Kucing"
+            android:textColor="@color/secondary_500"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvHistorySex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/rounded_border_secondary"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:text="Betina"
+            android:textColor="@color/secondary_500"
+            app:layout_constraintEnd_toStartOf="@+id/tvHistoryAge"
+            app:layout_constraintStart_toEndOf="@+id/tvHistorySpecies"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvHistoryAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_border_secondary"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:text="Betina"
+            android:textColor="@color/secondary_500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

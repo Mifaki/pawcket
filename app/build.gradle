@@ -49,6 +49,9 @@ dependencies {
     implementation libs.cloudinary.android
     implementation libs.cloudinary.core
     implementation libs.okhttp
+    implementation libs.viewpager2
+    implementation libs.glide
+    annotationProcessor libs.compiler
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core

@@ -8,13 +8,159 @@
     android:background="@color/primary_50"
     tools:context=".HistoryActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTopBarContainer"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="History Activity"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ivUserProfile"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/cat_profile_blue" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clFriendContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:background="@drawable/rounded_primary_100"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivChat"
+            app:layout_constraintStart_toEndOf="@+id/ivUserProfile"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvFriend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:text="Everyone"
+                android:textAppearance="@style/semibold_body_1"
+                android:textColor="@color/primary_800"
+                app:layout_constraintBottom_toBottomOf="@+id/ivChevronDownGreen"
+                app:layout_constraintEnd_toStartOf="@+id/ivChevronDownGreen"
+                app:layout_constraintTop_toTopOf="@+id/ivChevronDownGreen" />
+
+            <ImageView
+                android:id="@+id/ivChevronDownGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/chevron_down_green" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/ivChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/chat_icon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpHistory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.63"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clTopBarContainer" />
+
+    <EditText
+        android:id="@+id/etMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_primary_100"
+        android:ems="10"
+        android:hint="Send message..."
+        android:inputType="text"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:textColorHint="@color/primary_800"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vpHistory" />
+
+    <ImageButton
+        android:id="@+id/ibCameraAction"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toStartOf="@+id/ibDownload"
+        app:layout_constraintStart_toEndOf="@+id/ibDelete"
+        app:layout_constraintTop_toBottomOf="@+id/etMessage"
+        app:srcCompat="@drawable/camera_action_small" />
+
+    <ImageButton
+        android:id="@+id/ibDownload"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="24dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/ibCameraAction"
+        app:layout_constraintEnd_toEndOf="@+id/etMessage"
+        app:layout_constraintTop_toTopOf="@+id/ibCameraAction"
+        app:srcCompat="@drawable/download_iconn" />
+
+    <ImageButton
+        android:id="@+id/ibDelete"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="24dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/ibCameraAction"
+        app:layout_constraintStart_toStartOf="@+id/etMessage"
+        app:layout_constraintTop_toTopOf="@+id/ibCameraAction"
+        app:srcCompat="@drawable/delete_icon" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clFriendListContainer"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_bg_neutrals"
+        android:maxWidth="200dp"
+        android:padding="8dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/clTopBarContainer"
+        app:layout_constraintStart_toStartOf="@+id/clTopBarContainer"
+        app:layout_constraintTop_toBottomOf="@+id/clTopBarContainer">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFriends"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxWidth="184dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
