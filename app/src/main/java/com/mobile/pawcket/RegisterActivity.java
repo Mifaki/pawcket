@@ -115,6 +115,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if (!password.equals(confirmPassword)) {
                     etConfirmPassword.setError("Password is not the same");
+                    return;
                 }
 
                 database = FirebaseDatabase.getInstance("https://pawcket-9c810-default-rtdb.asia-southeast1.firebasedatabase.app/");
@@ -127,7 +128,7 @@ public class RegisterActivity extends AppCompatActivity {
                             Toast.makeText(RegisterActivity.this, "Registration successful!", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                             startActivity(intent);
-                            finish();  // Close registration activity
+                            finish();
                         })
                         .addOnFailureListener(e -> {
                             Log.d("test", "Error on register" + e.getMessage());

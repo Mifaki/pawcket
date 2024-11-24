@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Pawcket</string>
+
+    <!-- Onboarding Strings -->
+    <string name="onboarding_title_1">Abadikan Momen Hewan Peliharaanmu!</string>
+    <string name="onboarding_desc_1">Unggah foto hewan peliharaanmu langsung dari kamera atau galeri untuk menyimpan kenangan indah mereka di profil.</string>
+
+    <string name="onboarding_title_2">Teman Baru untuk Hewan Peliharaanmu</string>
+    <string name="onboarding_desc_2">Tambahkan teman hewan lain di aplikasi, nikmati fitur pawkeet dan lihat aktivitas terbaru mereka!</string>
+
+    <string name="onboarding_title_3">Simpan Foto Favorit ke Galeri</string>
+    <string name="onboarding_desc_3">Download foto hewan peliharaanmu ke galeri perangkatmu dan kelola semua momen berharga mereka dengan mudah</string>
+
 </resources>
