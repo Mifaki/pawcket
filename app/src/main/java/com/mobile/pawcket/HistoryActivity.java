@@ -81,7 +81,7 @@ public class HistoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_history);
 
         userManager = UserManager.getInstance(this);
-        reference = FirebaseDatabase.getInstance("https://pawcket-9c810-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference().child("histories");
+        reference = FirebaseDatabase.getInstance(BuildConfig.FIREBASE_URL).getReference().child("histories");
         histories = new ArrayList<>();
 
         ibDelete = findViewById(R.id.ibDelete);

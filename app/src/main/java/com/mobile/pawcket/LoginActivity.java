@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
         String name = etName.getText().toString();
         String password = etPassword.getText().toString();
 
-        reference = FirebaseDatabase.getInstance("https://pawcket-9c810-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("users");
+        reference = FirebaseDatabase.getInstance(BuildConfig.FIREBASE_URL).getReference("users");
         Query checkUserDatabase = reference.orderByChild("name").equalTo(name);
 
         checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {

@@ -60,7 +60,7 @@ public class FriendActivity extends AppCompatActivity {
 
         setupSearchView();
 
-        database = FirebaseDatabase.getInstance("https://pawcket-9c810-default-rtdb.asia-southeast1.firebasedatabase.app/");
+        database = FirebaseDatabase.getInstance(BuildConfig.FIREBASE_URL);
         reference = database.getReference();
 
         setupAdapters();

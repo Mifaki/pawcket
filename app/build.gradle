@@ -15,6 +15,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "FIREBASE_URL", "\"${getLocalProperty('firebase.url')}\"")
+        buildConfigField("String", "CLOUDINARY_NAME", "\"${getLocalProperty('cloudinary.cloud_name')}\"")
+        buildConfigField("String", "CLOUDINARY_API_KEY", "\"${getLocalProperty('cloudinary.api_key')}\"")
+        buildConfigField("String", "CLOUDINARY_API_SECRET", "\"${getLocalProperty('cloudinary.api_secret')}\"")
     }
 
     buildTypes {
@@ -23,13 +28,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
+}
+
+def getLocalProperty(String key) {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file("local.properties").newDataInputStream())
+    return properties.getProperty(key)
 }
 
 dependencies {

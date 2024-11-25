@@ -28,6 +28,7 @@ import androidx.camera.view.PreviewView;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
+import com.mobile.pawcket.BuildConfig;
 
 import com.cloudinary.android.MediaManager;
 import com.cloudinary.android.callback.ErrorInfo;
@@ -105,13 +106,13 @@ public class HomeActivity extends AppCompatActivity {
         etCaption = findViewById(R.id.etCaption);
         clHistoryActionContainer = findViewById(R.id.clHistoryActionContainer);
 
-        reference = FirebaseDatabase.getInstance("https://pawcket-9c810-default-rtdb.asia-southeast1.firebasedatabase.app/")
+        reference = FirebaseDatabase.getInstance(BuildConfig.FIREBASE_URL)
                 .getReference("histories");
         userManager = UserManager.getInstance(this);
 
-        cloudinaryConfig.put("cloud_name", "dgju6i2i8");
-        cloudinaryConfig.put("api_key", "615219349845786");
-        cloudinaryConfig.put("api_secret", "zjve12xdS8vCfmOMLkfgx7VlOgQ");
+        cloudinaryConfig.put("cloud_name", BuildConfig.CLOUDINARY_NAME);
+        cloudinaryConfig.put("api_key", BuildConfig.CLOUDINARY_API_KEY);
+        cloudinaryConfig.put("api_secret", BuildConfig.CLOUDINARY_API_SECRET);
 
         try {
             MediaManager.init(this, cloudinaryConfig);

@@ -18,7 +18,7 @@ import com.mobile.pawcket.utils.UserManager;
 public class ProfileActivity extends AppCompatActivity {
 
     private TextView tvName, tvUsername;
-    private ImageButton ibBack;
+    private ImageButton ibBack, ibLogout;
     private ConstraintLayout clFriendActionContainer;
 
     @Override
@@ -42,6 +42,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvName = findViewById(R.id.tvName);
         tvUsername = findViewById(R.id.tvUsername);
         ibBack = findViewById(R.id.ibBack);
+        ibLogout = findViewById(R.id.ibLogout);
         clFriendActionContainer = findViewById(R.id.clFriendActionContainer);
 
         tvName.setText(userManager.getName());
@@ -51,6 +52,15 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        ibLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                userManager.logOut();
+                Intent intent = new Intent(ProfileActivity.this, OnBoardingActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -118,7 +118,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                database = FirebaseDatabase.getInstance("https://pawcket-9c810-default-rtdb.asia-southeast1.firebasedatabase.app/");
+                database = FirebaseDatabase.getInstance(BuildConfig.FIREBASE_URL);
                 reference = database.getReference("users");
 
                 RegisterModel registerModel = new RegisterModel(email, name, username, password);
