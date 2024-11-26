@@ -51,14 +51,15 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
 
     class HistoryViewHolder extends RecyclerView.ViewHolder {
         private final ImageView ivCapturedImage;
-        private final TextView tvHistoryUsername;
-        private final TextView tvCaption;
-
+        private final TextView tvHistoryUsername, tvCaption, tvHistorySex, tvHistoryAge, tvHistorySpecies;
         public HistoryViewHolder(@NonNull View itemView) {
             super(itemView);
             ivCapturedImage = itemView.findViewById(R.id.ivCapturedImage);
             tvHistoryUsername = itemView.findViewById(R.id.tvHistoryUsername);
             tvCaption = itemView.findViewById(R.id.tvCaption);
+            tvHistorySpecies = itemView.findViewById(R.id.tvHistorySpecies);
+            tvHistorySex = itemView.findViewById(R.id.tvHistorySex);
+            tvHistoryAge = itemView.findViewById(R.id.tvHistoryAge);
         }
 
         public void bind(HistoryModel history) {
@@ -67,13 +68,16 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
                     .into(ivCapturedImage);
 
             tvHistoryUsername.setText(history.getUsername());
+            tvHistorySpecies.setText(history.getSpecies());
+            tvHistorySex.setText(history.getSex());
+            tvHistoryAge.setText(String.format("%s Tahun", history.getAge()));
 
             if (history.getCaption() == null || history.getCaption().isBlank()) {
                 tvCaption.setVisibility(View.INVISIBLE);
             } else {
+                tvCaption.setVisibility(View.VISIBLE);
                 tvCaption.setText(history.getCaption());
             }
-
         }
     }
 }

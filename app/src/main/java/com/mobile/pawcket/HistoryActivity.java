@@ -81,6 +81,12 @@ public class HistoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_history);
 
         userManager = UserManager.getInstance(this);
+
+        if (!userManager.isLoggedIn()) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }
+
         reference = FirebaseDatabase.getInstance(BuildConfig.FIREBASE_URL).getReference().child("histories");
         histories = new ArrayList<>();
 
@@ -213,8 +219,11 @@ public class HistoryActivity extends AppCompatActivity {
                             historySnapshot.getKey(),
                             historySnapshot.child("caption").getValue(String.class),
                             historySnapshot.child("imageUrl").getValue(String.class),
-                            historySnapshot.child("timestamp").getValue(Long.class),
-                            historySnapshot.child("username").getValue(String.class)
+                            historySnapshot.child("username").getValue(String.class),
+                            historySnapshot.child("species").getValue(String.class),
+                            historySnapshot.child("sex").getValue(String.class),
+                            historySnapshot.child("age").getValue(String.class),
+                            historySnapshot.child("timestamp").getValue(Long.class)
                     );
                     histories.add(history);
                 }
@@ -277,16 +286,34 @@ public class HistoryActivity extends AppCompatActivity {
 
         friends.add(new FriendDropdownModel("Everyone", PROFILE_PICS[0]));
 
+        String[] species = {"Kucing", "Anjing"};
+        String[] sex = {"Jantan", "Betina"};
+        String[] ages = {"1", "2", "3", "4", "5"};
+
         for (HistoryModel history : histories) {
             String username = history.getUsername();
             if (!uniqueUsernames.contains(username)) {
                 uniqueUsernames.add(username);
+
+                int speciesIndex = Math.abs(username.hashCode()) % species.length;
+                int sexIndex = Math.abs(username.hashCode() * 31) % sex.length;
+                int ageIndex = Math.abs(username.hashCode() * 37) % ages.length;
+
+                for (HistoryModel h : histories) {
+                    if (h.getUsername().equals(username)) {
+                        h.setSpecies(species[speciesIndex]);
+                        h.setSex(sex[sexIndex]);
+                        h.setAge(ages[ageIndex]);
+                    }
+                }
+
                 int profilePic = PROFILE_PICS[Math.abs(username.hashCode()) % PROFILE_PICS.length];
                 friends.add(new FriendDropdownModel(username, profilePic));
             }
         }
 
         friendDropdownAdapter.notifyDataSetChanged();
+        historyAdapter.notifyDataSetChanged();
     }
 
     private void filterHistories() {
@@ -313,7 +340,19 @@ public class HistoryActivity extends AppCompatActivity {
 
     private void deleteHistory(String historyId) {
         reference.child(historyId).removeValue()
-                .addOnSuccessListener(aVoid -> Toast.makeText(this, "History deleted successfully", Toast.LENGTH_SHORT).show())
+                .addOnSuccessListener(aVoid -> {
+                    histories.removeIf(history -> history.getId().equals(historyId));
+
+                    historyAdapter.updateHistories(histories);
+
+                    if (histories.isEmpty()) {
+                        Toast.makeText(this, "No more history items", Toast.LENGTH_SHORT).show();
+                    } else {
+                        viewPager.setCurrentItem(Math.min(viewPager.getCurrentItem(), histories.size() - 1), false);
+                    }
+
+                    Toast.makeText(this, "History deleted successfully", Toast.LENGTH_SHORT).show();
+                })
                 .addOnFailureListener(e -> Toast.makeText(this, "Failed to delete history: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 

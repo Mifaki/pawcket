@@ -1,5 +1,6 @@
 package com.mobile.pawcket;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -22,6 +23,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.mobile.pawcket.adapter.FriendAdapter;
 import com.mobile.pawcket.model.FriendModel;
+import com.mobile.pawcket.utils.UserManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +37,7 @@ public class FriendActivity extends AppCompatActivity {
     private RecyclerView rvFriend, rvSuggestion;
     private ImageButton ibBack;
     private SearchView svSearchFriend;
+    private UserManager userManager;
     private List<FriendModel> allFriends = new ArrayList<>();
 
     @Override
@@ -42,6 +45,13 @@ public class FriendActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_friend);
+
+        userManager = UserManager.getInstance(this);
+
+        if (!userManager.isLoggedIn()) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }
 
         tvNotFound = findViewById(R.id.tvNotFound);
         ibBack = findViewById(R.id.ibBack);

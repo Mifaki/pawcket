@@ -91,6 +91,13 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        userManager = UserManager.getInstance(this);
+
+        if (!userManager.isLoggedIn()) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }
+
         viewFinder = findViewById(R.id.viewFinder);
         ivCapturedImage = findViewById(R.id.ivCapturedImage);
         ivUserProfile = findViewById(R.id.ivUserProfile);
@@ -108,7 +115,6 @@ public class HomeActivity extends AppCompatActivity {
 
         reference = FirebaseDatabase.getInstance(BuildConfig.FIREBASE_URL)
                 .getReference("histories");
-        userManager = UserManager.getInstance(this);
 
         cloudinaryConfig.put("cloud_name", BuildConfig.CLOUDINARY_NAME);
         cloudinaryConfig.put("api_key", BuildConfig.CLOUDINARY_API_KEY);
